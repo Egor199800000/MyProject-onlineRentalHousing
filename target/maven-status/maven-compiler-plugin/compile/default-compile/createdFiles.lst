@@ -1,0 +1,6 @@
+com\egor\spring\mvc_hibernate_aop\service\EmployeeServiceImpl.class
+com\egor\spring\mvc_hibernate_aop\entity\Employee.class
+com\egor\spring\mvc_hibernate_aop\controller\MyController.class
+com\egor\spring\mvc_hibernate_aop\service\EmployeeService.class
+com\egor\spring\mvc_hibernate_aop\dao\EmployeeDAO.class
+com\egor\spring\mvc_hibernate_aop\dao\EmployeeDAOImpl.class
