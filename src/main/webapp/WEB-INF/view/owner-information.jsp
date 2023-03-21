@@ -14,9 +14,9 @@
 
     <form:hidden path="id"/>
 
-    Price ${owner.name}
+    Name ${owner.name}
     <br>
-    Description ${owner.surname}
+    Surname ${owner.surname}
     <br>
     Rented ${owner.rating}
     <br>

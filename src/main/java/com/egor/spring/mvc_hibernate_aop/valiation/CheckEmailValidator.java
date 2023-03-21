@@ -4,13 +4,12 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class CheckEmailValidator implements ConstraintValidator<CheckEmail,String> {
-    private String endOfEmail;
-
-
+// ConstraintValidator<CheckEmail,String> CheckEmail-сама анотация, String-тип применяемых данных
+    private String endOfEmail; //Переменная содержащая хвост email-а
 
     @Override
     public void initialize(CheckEmail checkEmail) {
-//за конец имейла в нашей анотации отечает метод value()
+//инициализируем конец email-а методом value()
         endOfEmail=checkEmail.value();
     }
 

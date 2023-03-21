@@ -24,6 +24,9 @@ public interface UserDao{
 
     public User getAuthorizedUser();
 
-    public void addHouseToListHouses(House house, User user);
+    public void addHouseToListHousesOwner(House house, User user);
+    public void addHouseToListHousesTenant(House house, User user);
+
+    List<House> getAllHousesOwnedByTheUser(User user);
 
 }

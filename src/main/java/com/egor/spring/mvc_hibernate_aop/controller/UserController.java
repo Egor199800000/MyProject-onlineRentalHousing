@@ -7,9 +7,11 @@ import com.egor.spring.mvc_hibernate_aop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    HouseService houseService;
+    private HouseService houseService;
 
     @RequestMapping("/addNewUser") //-action
     public String addNewUser(Model model){
@@ -30,7 +32,12 @@ public class UserController {
     }
 
     @RequestMapping("/saveNewUser")
-    public String saveUser(@ModelAttribute("user") User user){
+    public String saveUser(@Valid @ModelAttribute("user") User user,
+                           BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            return "user-info";
+        }
+
         user.setDeleted(false);
         user.setEnable(true);
         user.setAuthorized(false);
@@ -50,9 +57,11 @@ public class UserController {
     }
 
     @PostMapping("authorized") //action
-    public String authorized(@ModelAttribute("user") User user,Model model){
-       User user1= userService.getUserByEmail(user.getEmail());
-       User user2= userService.getUserByPassword(user.getPassword());
+    public String authorized(@ModelAttribute("user") User user,
+                             Model model){
+
+        User user1= userService.getUserByEmail(user.getEmail());
+        User user2= userService.getUserByPassword(user.getPassword());
 
         if (user1.getId()==user2.getId()){
             System.out.println("Users equals");
@@ -62,7 +71,7 @@ public class UserController {
             model.addAttribute("user",user);
             return "success";
         }
-                return "redirect:/";
+        return "redirect:/";
     }
 
     @RequestMapping("/addNewHouse") //-action
@@ -77,13 +86,13 @@ public class UserController {
     @PostMapping("saveNewHouse")
     public String saveHouse(@ModelAttribute("house") House house){
             User user=userService.getAuthorizedUser();
-                userService.addHouseToListHouses(house,user);
+                userService.addHouseToListHousesOwner(house,user);
                 System.err.println("House add");
         return "redirect:/";
     }
 
 
-//TODO:Доработать
+
     @GetMapping("/ownerInfo") //-кнопка
     public String OwnerInformation(@RequestParam("houseId") int id,Model model){
 //сюда должны попасть id дома который мы смотрим
@@ -93,7 +102,4 @@ public class UserController {
         model.addAttribute("owner",user);
         return "owner-information";
     }
-
-
-
 }

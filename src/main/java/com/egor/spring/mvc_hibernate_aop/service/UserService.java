@@ -22,9 +22,11 @@ public interface UserService {
 
      User getUserByPassword(String password);
 
-     public void addHouseToListHouses(House house, User user);
+     public void addHouseToListHousesOwner(House house, User user);
 
      public User getAuthorizedUser();
+
+     void addHouseToListHousesTenant(House house,User user);
 
      public boolean isAuthorizedUser(User user);
 

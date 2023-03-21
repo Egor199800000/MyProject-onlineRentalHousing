@@ -80,10 +80,10 @@ public class UserDaoImpl implements UserDao{
     }
 
     @Override
-    public void addHouseToListHouses(House house, User user){
+    public void addHouseToListHousesOwner(House house, User user){
         Session session=sessionFactory.getCurrentSession();
         List<House> housesList=user.getHouses();
-        System.err.println("Method addHouseToListHouses on");
+        System.err.println("Method addHouseToListHousesOwner on");
         if (housesList==null){
             System.err.println("First House for "+user.getName());
             housesList=new ArrayList<>();
@@ -93,6 +93,20 @@ public class UserDaoImpl implements UserDao{
         session.merge(user);
     }
 
+    @Override
+    public void addHouseToListHousesTenant(House house, User user) {//добавление дома в список арендованных, пользователем, домов
+        Session session=sessionFactory.getCurrentSession();
+        List<House> housesList=user.getRentedHouses();
+        System.err.println("Method addHouseToListHousesTenant start work");
+        if (housesList==null){
+            System.err.println(user.getName()+"Rent house");
+            housesList=new ArrayList<>();
+        }
+        house.setRented(true);
+        housesList.add(house);
+        house.setTenant(user);//by Directional связь
+        session.merge(user);
+    }
 
     @Override
     public User getAuthorizedUser() {
@@ -109,11 +123,16 @@ public class UserDaoImpl implements UserDao{
             else i++;
         }
         System.err.println("No authorized user");
-        return user;
+        return null;
+    }
+
+    @Override
+    public List<House> getAllHousesOwnedByTheUser(User user) {
+        return null;
     }
 
 
-//    @Override
+    //    @Override
 //    public boolean passwordAndMailAuthentication(String password, String email) {
 //        password=sessionFactory.getCurrentSession()
 //    }

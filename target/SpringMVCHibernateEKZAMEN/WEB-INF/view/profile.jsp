@@ -19,7 +19,7 @@
     <br>
     Rating ${authUser.rating}
     <br>
-    Rented House ${authUser.rentedHouse}
+<%--    Rented House ${authUser.rentedHouse}--%>
     <br>
     <br>
     <input type="submit" value="Back">

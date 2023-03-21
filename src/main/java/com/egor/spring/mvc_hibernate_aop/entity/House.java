@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,9 +20,11 @@ public class House {
     private int id;
 
     @Column(name = "address")
+    //@NotBlank(message = "address is required field")
     private String address;
 
     @Column(name = "price")
+    //@NotBlank(message = "price is required field")
     private int price;
 
     @Column(name = "is_rented")
@@ -31,6 +34,7 @@ public class House {
     boolean isDeleted=false;////когда аккаунт владельца удален, вместе с этим блокируются объявления и арендованные дома становятся свободны
 
     @Column(name = "description_")
+    //@NotBlank(message = "description is required field")
     private String description;
 
 
@@ -40,11 +44,9 @@ public class House {
     @JoinColumn(name="owner_")
     User owner;//владелец дома
 
-    public User getOwner() {
-        return owner;
-    }
 
-    @OneToOne(cascade = CascadeType.ALL)
+
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name="tenant")
-    User tenant;//арендатор дома
+    private User tenant;//арендатор дома
 }

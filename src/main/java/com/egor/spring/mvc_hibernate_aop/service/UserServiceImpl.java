@@ -83,8 +83,14 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    public void addHouseToListHouses(House house,User user){
-       userDao.addHouseToListHouses(house,user);
+    public void addHouseToListHousesOwner(House house,User user){
+       userDao.addHouseToListHousesOwner(house,user);
+        System.err.println("Done");
+    }
+    @Override
+    @Transactional
+    public void addHouseToListHousesTenant(House house,User user) {
+        userDao.addHouseToListHousesTenant(house,user);
         System.err.println("Done");
     }
 
@@ -108,4 +114,9 @@ public class UserServiceImpl implements UserService{
         }
         return false;
     }
+
+
+
+
+
 }

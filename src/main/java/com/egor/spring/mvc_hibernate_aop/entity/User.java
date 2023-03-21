@@ -11,10 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -32,34 +29,35 @@ public class User {
     private int id;
 
     @Column(name = "name_")
-    //@Size(min=2,message = "name must be min 2 symbols")
+    @Size(min=2,message = "name must be min 2 symbols")
     private String name;
 
 
-    //@NotEmpty(message = "surname is required field")
-    //@NotBlank(message = "surname is required field")
+    @Size(min=2,message = "surname must be min 2 symbols")
     @Column(name = "surname")
     private String surname;
 
+    @NotBlank(message = "country is required field")
     @Column(name = "country ")
     private String country;
-
+    @NotBlank(message = "city is required field")
     @Column(name = "city")
     private String city;
 
 
-    //@Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}",message = "please use pattern XXXX-XX-XX")
+    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}",message = "please use pattern YYYY-MM-NN")
     @Column(name = "date_of_birth")
     private String dateOfBirth;
 
 
-    //@CheckEmail(value = "@gmail.com",message = "email must ends with @gmail.com")
+    @CheckEmail
     @Column(name = "email")
     private String email;
 
 
-    //@Size(min=2,message = "name must be min 2 symbols")
+
     @Column(name = "password_")
+    @NotBlank(message = "password is required field")
     private String password;
 
     @Column(name = "rating")
@@ -79,20 +77,20 @@ public class User {
     @OneToMany(cascade =
             {CascadeType.ALL}, mappedBy ="owner",fetch = FetchType.EAGER)
     private List<House> houses;//дома принадлежащие пользователю
-    //---------
 
 
-    public List<House> getHouses() {
-        return houses;
-    }
+    @OneToMany(cascade = CascadeType.ALL, mappedBy ="tenant",fetch = FetchType.EAGER)
+    private List<House> rentedHouses;//id арендованного дома
 
-    public void setHouses(List<House> houses) {
-        this.houses = houses;
-    }
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy ="tenant")
-    private House rentedHouse;//id арендованного дома
 
+
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -120,7 +118,7 @@ public class User {
                 ", isDeleted=" + isDeleted +
                 ", isAuthorized=" + isAuthorized +
                 ", houses=" + houses +
-                ", rentedHouse=" + rentedHouse +
+                ", rentedHouse=" + rentedHouses +
                 '}';
     }
 }

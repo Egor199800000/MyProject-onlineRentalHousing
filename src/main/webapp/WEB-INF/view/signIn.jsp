@@ -10,8 +10,10 @@
   <form:hidden path="id"/>
   <br><br>
   Email <form:input path="email"/>
+  <form:errors path="email"/>
   <br><br>
   Password <form:input type="text" path="password"/>
+  <form:errors path="password"/>
   <br><br>
   <br><br>
   <form:hidden path="name"/>

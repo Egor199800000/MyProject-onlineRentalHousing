@@ -11,8 +11,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)//инф о анотации сохр в плоть до выполнения кода
 @Constraint(validatedBy=CheckEmailValidator.class)
 public @interface CheckEmail {
-    public String value() default "xyzxyz.com";
-    public String message() default "email must ends with xyzxyz.com";
+    public String value() default "@gmail.com";
+    public String message() default "email must ends with @gmail.com";
     public Class<?>[] groups() default {};//позволяет разбивать анотации по группам
     public Class<? extends Payload> [] payload() default {};//перенос информации о методанных клиента
 

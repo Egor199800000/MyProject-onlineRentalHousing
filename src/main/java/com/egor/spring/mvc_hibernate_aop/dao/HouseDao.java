@@ -9,6 +9,8 @@ public interface HouseDao {
 
      List<House> getAllHouses();
 
+     List<House> getAllRentedHouses();
+
     House getHouse(int id);
 
     void saveHouse(House house);

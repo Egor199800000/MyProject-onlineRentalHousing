@@ -30,11 +30,12 @@ public class HomeController {
     @RequestMapping("/")
     public String showAllHouses(Model model){
       User user=userService.getAuthorizedUser();
-      model.addAttribute("showAuthUser",user);
+      model.addAttribute("authUser",user);
         List<House> allHouses=houseService.getAllHouses();
         model.addAttribute("allHouses",allHouses);
         return "all-houses";
     }
+
 
     @RequestMapping("/showDetails")
     public String houseInfo(@RequestParam("houseId") int id, Model model){
@@ -66,7 +67,7 @@ public class HomeController {
     }
 
     @RequestMapping("/logOut")
-    public String logOut(){
+    public String logOut(Model model){
         User user=userService.getAuthorizedUser();
         user.setAuthorized(false);
         userService.saveUser(user);
@@ -83,7 +84,6 @@ public class HomeController {
 //        userService.saveUser(user);
 //        return "redirect:/";
 //    }
-
 
 
 

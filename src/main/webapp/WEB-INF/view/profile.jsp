@@ -19,7 +19,21 @@
     <br>
     Rating ${authUser.rating}
     <br>
-    Rented House ${authUser.rentedHouse}
+    <c:forEach var="house" items="${allHouses}">
+
+        <c:url var="infoHouseButton" value="showDetails">
+            <c:param name="houseId" value="${house.id}"/>   <--внутри ссылка параметр с id-->
+        </c:url>
+
+
+        <p>Price: ${house.price}</p>
+        <p>Address: ${house.address}</p>
+        <p>
+            <input type="button" value="Show" onclick="window.location.href='${infoHouseButton}'">
+        </p>
+
+
+    </c:forEach>
     <br>
     <br>
     <input type="submit" value="Back">

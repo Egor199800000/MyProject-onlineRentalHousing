@@ -12,6 +12,11 @@ import java.util.List;
 @Repository("houseRep")
 public class HouseDaoImpl implements HouseDao{
 
+    @Override
+    public List<House> getAllRentedHouses() {
+        return null;
+    }
+
     @Autowired
     private SessionFactory sessionFactory; //Внедрение SessionFactory-бина для работы с БД
 
