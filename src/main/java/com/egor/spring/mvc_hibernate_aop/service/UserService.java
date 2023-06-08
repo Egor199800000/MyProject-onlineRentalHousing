@@ -28,7 +28,11 @@ public interface UserService {
 
      void addHouseToListHousesTenant(House house,User user);
 
+     public List<House> getAllHousesOwnedByTheUser(User user);
+
      public boolean isAuthorizedUser(User user);
 
      User getRegisteredUserByPasswordAndEmail(String password, String email);
+
+    boolean isUniqueEmail(String email);
 }

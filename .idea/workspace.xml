@@ -10,6 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f68fc88-8ae9-4226-bc15-8eae75046cf2" name="Changes" comment="git add springMVCHibernateEKZAMEN">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/aop/aspects/GetAuthUserAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/aop/pointcuts/pointcut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/SearchDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/SearchDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/sorting/PriceHouseComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/valiation/UniqueEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/email-error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/you-already-authorized.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/sorting/PriceHouseComparator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/lib/aspectjweaver-1.9.19.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/email-error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/you-already-authorized.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/sorting/PriceHouseComparator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DZ_Java222_Drozdov/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DZ_Java222_Drozdov/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DZ_Java222_Drozdov/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DZ_Java222_Drozdov/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DZ_Java222_Drozdov/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DZ_Java222_Drozdov/.idea/vcs.xml" afterDir="false" />
@@ -135,56 +148,50 @@
       <change beforePath="$PROJECT_DIR$/../spring-mvc-academy/.idea/spring-demo-2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring-mvc-academy/.idea/spring-mvc.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/1c81e494-4203-4ce3-b826-dac3b8e32b73.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1c81e494-4203-4ce3-b826-dac3b8e32b73.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/controller/RentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/controller/RentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/HouseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/HouseDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/HouseDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/HouseDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/dao/UserDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/entity/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/entity/House.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/HouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/HouseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/HouseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/HouseServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmailValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/all-houses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/all-houses.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/house-info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/house-info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/house-param.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/house-param.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/owner-information.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/owner-information.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/profile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/signIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/signIn.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user-info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/user-info.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/success.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/controller/RentController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/entity/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/entity/House.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/HouseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/HouseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/HouseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/HouseServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmailValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmailValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/all-houses.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/all-houses.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/house-info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/house-info.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/house-param.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/house-param.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/owner-information.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/owner-information.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/signIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/signIn.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/user-info.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/user-info.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/success.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/SpringMVCHibernateEKZAMEN/WEB-INF/view/success.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/controller/RentController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/controller/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/HouseDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/dao/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/entity/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/entity/House.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/HouseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/HouseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/HouseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/HouseServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/service/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmailValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/egor/spring/mvc_hibernate_aop/valiation/CheckEmailValidator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springMVCHibernateStepik1/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springMVCHibernateStepik1/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springMVCHibernateStepik1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springMVCHibernateStepik1/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../springMVCHibernateStepik1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../springMVCHibernateStepik1/.idea/workspace.xml" afterDir="false" />
@@ -219,8 +226,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -247,10 +254,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Егор/IdeaProjects/spring-demo",
+    "last_opened_file_path": "C:/Users/Егор/IdeaProjects/sportswearsshop",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel",
@@ -272,19 +280,20 @@
       <recent name="C:\Users\Егор\IdeaProjects\springMVCHibernateEKZAMEN\src\main\java\com\egor\spring\mvc_hibernate_aop" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.71">
-    <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
       <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="springMVCHibernateEKZAMEN:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/springMVCHibernateEKZAMEN_war_exploded" />
+            <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="8b6f715a-44bb-4128-bf9c-c8823653d4de" />
+        <option name="BASE_DIRECTORY_NAME" value="a937de52-97ac-49b8-aeac-a1873e61729c" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -292,7 +301,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="55899" />
+        <option name="DEBUG_PORT" value="59785" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -361,97 +370,6 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="springMVCHibernateEKZAMEN:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/springMVCHibernateEKZAMEN_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="057f3a17-25e4-459b-9822-156fbeb18b6b" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57215" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="springMVCHibernateEKZAMEN:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Tomcat Server.Tomcat 10.0.27" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.71" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -473,7 +391,14 @@
       <workItem from="1677605885283" duration="921000" />
       <workItem from="1677617756581" duration="33273000" />
       <workItem from="1678130647102" duration="108053000" />
-      <workItem from="1679077195380" duration="37378000" />
+      <workItem from="1679077195380" duration="51257000" />
+      <workItem from="1680708739887" duration="4436000" />
+      <workItem from="1683645832982" duration="8919000" />
+      <workItem from="1685299005232" duration="189000" />
+      <workItem from="1685299201545" duration="588000" />
+      <workItem from="1685303838698" duration="15422000" />
+      <workItem from="1685734335425" duration="15153000" />
+      <workItem from="1686070859010" duration="6131000" />
     </task>
     <servers />
   </component>

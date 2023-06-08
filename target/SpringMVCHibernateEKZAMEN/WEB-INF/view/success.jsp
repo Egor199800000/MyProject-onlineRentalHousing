@@ -13,8 +13,8 @@
 <h1>Success</h1>
 <%--Hello ${nameAttribute}--%>
 
-<form:form action="homePage" modelAttribute="user">
-    Welcome ${user.name}
+<form:form action="homePage" modelAttribute="authUser">
+    Welcome ${authUser.name}
     <br><br>
     <input type="submit" value="OK">
 </form:form>

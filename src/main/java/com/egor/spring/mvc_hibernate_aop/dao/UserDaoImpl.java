@@ -48,13 +48,11 @@ public class UserDaoImpl implements UserDao{
     public User getUserByEmail(String reqEmail) {
         Session session=sessionFactory.getCurrentSession();
         String hql="from User where email= :lg";
-            Query query=session.createQuery(hql);
-            query.setParameter("lg",reqEmail);
-            List<User> users=query.getResultList();
-            User user=users.get(0);
-            int id=user.getId();
-            System.err.println(user.getId());
-        User userByEmail=session.get(User.class,id);
+        Query query=session.createQuery(hql);
+        query.setParameter("lg",reqEmail);
+        List<User> users=query.getResultList();
+        User userByEmail=users.get(0);
+        System.err.println(userByEmail.getId());
         return userByEmail;
     }
 
@@ -63,8 +61,10 @@ public class UserDaoImpl implements UserDao{
     @Override
     public List<User> getAllUsers() {
         Session session=sessionFactory.getCurrentSession();
+        System.out.println("getAllUsers НАЧАЛ РАБОТУ");
         Query<User> query=session.createQuery("from User", User.class);
         List<User> allUsers=query.getResultList();
+        System.out.println("ПОЛУЧИЛИ ЛИСТ ВСЕХ ЮЗЕРОВ");
         return allUsers;
     }
 
@@ -115,20 +115,24 @@ public class UserDaoImpl implements UserDao{
         List<User> allUsers=query.getResultList();
         User user=null;
         for (int i=0;i<allUsers.size();){
-             user=session.get(User.class,i+1);
+            user=allUsers.get(i);
             if (user.isAuthorized()){
-                System.err.println(user.getName()+" Authorized");
+                System.err.println(user.getName()+" authorized user");
                 return user;
             }
-            else i++;
+            i++;
         }
-        System.err.println("No authorized user");
         return null;
     }
 
     @Override
     public List<House> getAllHousesOwnedByTheUser(User user) {
-        return null;
+        Session session=sessionFactory.getCurrentSession();
+        String hql="from House where owner= :lg";
+        Query query=session.createQuery(hql);
+        query.setParameter("lg",user.getId());
+        List<House> allHousesOwnedByTheUser=query.getResultList();
+        return allHousesOwnedByTheUser;
     }
 
 

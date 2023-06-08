@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html>
 <body>
@@ -19,21 +20,18 @@
     <br>
     Rating ${authUser.rating}
     <br>
-    <c:forEach var="house" items="${allHouses}">
+<%--    <c:forEach var="house" items="${allHousesOwnedByTheUser}">--%>
 
-        <c:url var="infoHouseButton" value="showDetails">
-            <c:param name="houseId" value="${house.id}"/>   <--внутри ссылка параметр с id-->
-        </c:url>
+<%--        <c:url var="infoHouseButton" value="profile">--%>
+<%--            <c:param name="houseId" value="${allHousesOwnedByTheUser.id}"/>   <--внутри ссылка параметр с id-->--%>
+<%--        </c:url>--%>
 
-
-        <p>Price: ${house.price}</p>
-        <p>Address: ${house.address}</p>
-        <p>
-            <input type="button" value="Show" onclick="window.location.href='${infoHouseButton}'">
-        </p>
+<%--        <p>--%>
+<%--            <input type="button" value="Show" onclick="window.location.href='${infoHouseButton}'">--%>
+<%--        </p>--%>
 
 
-    </c:forEach>
+<%--    </c:forEach>--%>
     <br>
     <br>
     <input type="submit" value="Back">

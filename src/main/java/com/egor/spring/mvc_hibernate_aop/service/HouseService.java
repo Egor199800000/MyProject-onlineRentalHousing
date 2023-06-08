@@ -16,4 +16,6 @@ public interface HouseService {
 
     void deleteHouse(int id);
 
+    public List<House> getAllHousesByPriceAscending();
+
 }

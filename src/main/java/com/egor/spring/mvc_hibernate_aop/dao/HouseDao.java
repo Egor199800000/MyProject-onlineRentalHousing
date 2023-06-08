@@ -17,4 +17,5 @@ public interface HouseDao {
 
     void deleteHouse(House house);//удаление дома, isDeleted=true, isRented=true
 
+    public List<House> getAllHousesByPriceAscending();
 }

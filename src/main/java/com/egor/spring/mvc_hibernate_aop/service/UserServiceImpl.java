@@ -115,8 +115,35 @@ public class UserServiceImpl implements UserService{
         return false;
     }
 
+//    @Override
+//    public boolean isUniqueEmail(String email) {
+//        List<User> users=userDao.getAllUsers();
+//        while (users.iterator().hasNext()){
+//            User user=users.iterator().next();
+//            if (user.getEmail().equals(email)){
+//                System.out.println("not unique Email");
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
 
+    @Override
+    public boolean isUniqueEmail(String email) {
+        System.err.println(" isUniqueEmail НАЧАЛ РАБОТУ");
+        ArrayList<User> users= (ArrayList<User>) userDao.getAllUsers();
+        System.err.println("МЕТОД isUniqueEmail ПОЛУЧИЛ ЮЗЕРОВ");
+        for (User u: users){
+            if (u.getEmail().equals(email)){
+                return false;
+            }
+        }
+        return true;
+    }
 
-
-
+    @Override
+    @Transactional
+    public List<House> getAllHousesOwnedByTheUser(User user) {
+       return userDao.getAllHousesOwnedByTheUser(user);
+    }
 }

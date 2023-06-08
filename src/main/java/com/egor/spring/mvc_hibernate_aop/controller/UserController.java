@@ -10,10 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class UserController {
@@ -25,7 +22,6 @@ public class UserController {
 
     @RequestMapping("/addNewUser") //-action
     public String addNewUser(Model model){
-
         User user=new User();
         model.addAttribute("user",user);
         return "user-info";
@@ -36,6 +32,13 @@ public class UserController {
                            BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "user-info";
+        }
+
+        String email=user.getEmail();
+        User otherUser=userService.getUserByEmail(email);
+        if (otherUser!=null){
+            System.err.println("ERROR BY EMAIL");
+            return "email-error";
         }
 
         user.setDeleted(false);
@@ -51,24 +54,34 @@ public class UserController {
 
     @GetMapping("/signIn") //-кнопка
     public String signIn(Model model){
+        User otherUser=userService.getAuthorizedUser();
+        if (otherUser!=null){
+            return "you-already-authorized";
+        }
         User user=new User();
         model.addAttribute("user",user);
         return "signIn";
     }
 
     @PostMapping("authorized") //action
-    public String authorized(@ModelAttribute("user") User user,
+    public String authorized(@Valid @ModelAttribute("user") User user,
+                             BindingResult bindingResult,
                              Model model){
 
         User user1= userService.getUserByEmail(user.getEmail());
         User user2= userService.getUserByPassword(user.getPassword());
+
+//        if (bindingResult.hasErrors()){
+//            System.err.print("not valid password or mail");
+//            return "signIn";
+//        }
 
         if (user1.getId()==user2.getId()){
             System.out.println("Users equals");
             user=userService.getUser(user1.getId());
             user.setAuthorized(true);
             userService.saveUser(user);
-            model.addAttribute("user",user);
+            model.addAttribute("authUser",user);
             return "success";
         }
         return "redirect:/";
@@ -102,4 +115,16 @@ public class UserController {
         model.addAttribute("owner",user);
         return "owner-information";
     }
+
+    @RequestMapping("ownersHouse")
+    public String houseInfo(@RequestParam("houseId") int id, Model model){
+//вбю-house-info; аттрибут- "houseDescr"
+        House house=houseService.getHouse(id);
+        //model.addAttribute("id", id);
+        model.addAttribute("houseDescr",house);
+        return "house-info";
+//<form:form action="showDetails" modelAttribute="houseDescr">
+    }
+
+
 }

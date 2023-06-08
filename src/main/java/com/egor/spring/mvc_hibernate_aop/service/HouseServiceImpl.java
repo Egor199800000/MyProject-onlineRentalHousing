@@ -22,6 +22,10 @@ public class HouseServiceImpl implements HouseService{
         return houseDao.getAllHouses();
     }
 
+    public List<House> getAllHousesByPriceAscending() {
+        return houseDao.getAllHousesByPriceAscending();
+    }
+
     @Override
     @Transactional
     public void saveHouse(House house) {

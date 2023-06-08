@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -45,15 +44,15 @@ public class User {
     private String city;
 
 
-    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}",message = "please use pattern YYYY-MM-NN")
+    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}",message = "please use pattern YYYY-MM-DD")
     @Column(name = "date_of_birth")
     private String dateOfBirth;
 
 
     @CheckEmail
+    @NotBlank(message = "Filed is required field")
     @Column(name = "email")
     private String email;
-
 
 
     @Column(name = "password_")

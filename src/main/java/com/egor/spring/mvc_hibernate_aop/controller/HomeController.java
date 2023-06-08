@@ -4,12 +4,13 @@ import com.egor.spring.mvc_hibernate_aop.entity.House;
 import com.egor.spring.mvc_hibernate_aop.entity.User;
 import com.egor.spring.mvc_hibernate_aop.service.HouseService;
 import com.egor.spring.mvc_hibernate_aop.service.UserService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+
+//TODO: что еще реализовать: SearchController, обработка исключений в JSON формате, попробовать реализовать aop-разделение рабочего функционала от бизнес логики
 
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class HomeController {
     public String showAllHouses(Model model){
       User user=userService.getAuthorizedUser();
       model.addAttribute("authUser",user);
+      //model.addAttribute("authUserName",user.getName());
         List<House> allHouses=houseService.getAllHouses();
         model.addAttribute("allHouses",allHouses);
         return "all-houses";
@@ -52,27 +54,33 @@ public class HomeController {
         return "redirect:/";
     }
 
+
+//вывод имени авторизованного юзера
     @RequestMapping("profileUser") //-action
-    public String profileButton(@RequestParam("showAuthUser") int id,Model model){
-        User user=userService.getUser(id);
-        model.addAttribute("authUser",user);
+    public String profileButton( @ModelAttribute("authUser") User user){
         return "profile";
     }
 
+//профиль юзера
     @RequestMapping("/profile")
-    public String profile(Model model){
-        User user=userService.getAuthorizedUser();
-        model.addAttribute("authUser",user);
+    public String profile( @ModelAttribute("authUser") User user,Model model){
+        User user1=userService.getAuthorizedUser();
+        model.addAttribute("authUser",user1);
         return "profile";
     }
 
     @RequestMapping("/logOut")
-    public String logOut(Model model){
+    public String logOut(){
         User user=userService.getAuthorizedUser();
+        if (user==null){
+            return "redirect:/";
+        }
         user.setAuthorized(false);
         userService.saveUser(user);
         return "redirect:/";
     }
+
+
 
 
 //    @GetMapping("logOut/{id}")
